@@ -1,0 +1,15 @@
+﻿@model ProjectPortfolio.ViewModels.AddMenuItemViewModel
+
+<h1>Add Item To Menu:@Model.Menu.Name</h1>
+
+<form asp-controller="Menu" asp-action="AddItem" method="post">
+
+    <div class="form-group">
+        <label asp-for="ProjectID"></label>
+        <select asp-for="ProjectID" asp-items="Model.Projects"></select>
+        <span asp-validation-for="ProjectID"></span>
+    </div>
+    <input type="hidden" name="MenuID" value="@Model.Menu.ID" />
+
+    <input type="submit" value="Add Item" />
+</form>

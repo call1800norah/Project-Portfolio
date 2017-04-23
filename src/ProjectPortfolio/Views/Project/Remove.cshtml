@@ -1,0 +1,13 @@
+﻿<h1>@ViewBag.title</h1>
+
+<form method="post">
+
+    @foreach (var project in ViewBag.projects)
+    {
+        <input type="checkbox" name="projectIds" id="@project.ID" value="@project.ID" />
+        <label for="@project.ID">@project.Name</label>
+        <br />
+    }
+
+    <input type="submit" value="Remove Selected Project(s)" />
+</form>
