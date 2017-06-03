@@ -42,10 +42,11 @@ namespace ProjectPortfolio.Controllers
                 context.Categories.Add(newCategory);
                 context.SaveChanges();
 
-                return Redirect("/Menu");
+                return Redirect("/Category");
             }
 
             return View(addCategoryViewModel);
         }
+        
     }
 }
