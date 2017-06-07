@@ -94,6 +94,39 @@ namespace ProjectPortfolio.Controllers
             }
             return View(addMenuItemViewModel);
         }
+        //public IActionResult RemoveItem(int id)
+        //{
+        //    Menu menu = context.Menus.Single(m => m.ID == id);
+        //    List<Project> projects = context.Projects.ToList();
+        //    return View(new RemoveMenuItemViewModel(menu, projects));
+
+        //}
+        //[HttpPost]
+        //public IActionResult RemoveItem(RemoveMenuItemViewModel removeMenuItemViewModel)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        var projectID = removeMenuItemViewModel.ProjectID;
+        //        var menuID = removeMenuItemViewModel.MenuID;
+
+        //        IList<ProjectMenu> existingItems = context.ProjectMenus
+        //            .Where(cm => cm.ProjectID == projectID)
+        //            .Where(cm => cm.MenuID == menuID).ToList();
+
+        //        if (existingItems.Count == 0)
+        //        {
+        //            ProjectMenu menuItem = new ProjectMenu
+        //            {
+        //                Project = context.Projects.Single(c => c.ID == projectID),
+        //                Menu = context.Menus.Single(m => m.ID == menuID)
+        //            };
+        //            context.ProjectMenus.Remove(menuItem);
+        //            context.SaveChanges();
+        //        }
+        //        return RedirectToAction("ViewMenu", new { id = removeMenuItemViewModel.MenuID });
+        //    }
+        //    return View(removeMenuItemViewModel);
+        //}
     }
 }
 

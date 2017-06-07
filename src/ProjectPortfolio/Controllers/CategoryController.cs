@@ -47,6 +47,26 @@ namespace ProjectPortfolio.Controllers
 
             return View(addCategoryViewModel);
         }
-        
+        public IActionResult Remove()
+        {
+            ViewBag.title = "Remove Categories";
+            ViewBag.Categories = context.Categories.ToList();
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Remove(int[] CategoryIds)
+        {
+
+            foreach (int categoryId in CategoryIds)
+            {
+                ProjectCategory theCategory = context.Categories.Single(c => c.ID == categoryId);
+                context.Categories.Remove(theCategory);
+            }
+
+            context.SaveChanges();
+
+             return Redirect("/Category");
+        }
     }
 }
